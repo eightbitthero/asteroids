@@ -6,16 +6,25 @@ from constants import *
 
 def main():
     pygame.init()
+    new_clock = pygame.time.Clock()
+    dt = 0
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     print ("Starting asteroids!")
     print (f"Screen width: {SCREEN_WIDTH}")
     print (f"Screen height: {SCREEN_HEIGHT}")
+    print (new_clock)
+
+
+
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
         screen.fill("black")
         pygame.display.flip
+        dt = new_clock.tick(60)/1000
+        print (dt)
+        
 
 if __name__ == "__main__":
     main()
